@@ -1,0 +1,190 @@
+/* --- CONFIGURACIÓN GENERAL Y PALETA P&P --- */
+:root {
+  --pyp-blue: #0A66C2;
+  --pyp-dark: #1D1D1F;
+  --pyp-gray-bg: #F5F7FA;
+  --pyp-input-bg: #E8EDF2;
+  --pyp-light-gray: #B0B7C3;
+  --pyp-border: #DDE2E6;
+  --pyp-action: #708090;
+  --pyp-success: #198754;
+  --pyp-danger: #DC3545;
+}
+
+/* Reseteo total para eliminar bordes y márgenes */
+/* Fondo blanco en toda la jerarquía */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #ffffff !important;
+    width: 100%;
+}
+
+/* Eliminar bordes o sombras sospechosas */
+* {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* --- VISTA 1: LOGIN */
+.auth-wrapper {
+  min-height: 100vh;
+  background-color: var(--pyp-gray-bg);
+}
+
+.form-section { background-color: #FFFFFF; }
+
+.logo-img { max-width: 130px; }
+
+.login-title { font-size: 2.5rem; font-weight: 700; color: var(--pyp-dark); }
+
+.auth-label { font-size: 0.9rem; color: var(--pyp-dark); font-weight: 600; margin-bottom: 0.5rem; }
+
+.auth-input {
+  background-color: var(--pyp-input-bg);
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+}
+
+.auth-input:focus { background-color: #E2E8F0; box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1); }
+
+.btn-iniciar {
+  background-color: #007bff !important;
+    color: white;
+    border: none;
+      font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-iniciar:hover { background-color: #5F6F7E; color: #ffffff; }
+
+.btn-menu-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: white;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+}
+
+.btn-menu-item:hover {
+    background-color: #a0a0a0;
+    padding-left: 20px; /* Efecto de movimiento al pasar el mouse */
+    color: #ffffff;
+}
+
+.btn-menu-item i {
+    font-size: 1.2rem;
+    color: #ffc107; /* Color para los iconos */
+}
+
+.register-link { color: #28A745 !important; font-weight: 600; text-decoration: underline; }
+
+/* 1. Elimina el estilo de tarjeta rígida de Bootstrap */
+.card {
+    border: none !important;
+    border-radius: 40px !important; /* Bordes mucho más suaves */
+    overflow: hidden; /* Corta todo lo que sobresalga */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; /* Sombra suave, no rígida */
+}
+
+/* 2. Asegura que el contenedor no tenga un fondo que lo haga ver cuadrado */
+.auth-wrapper {
+    background-color: #f8f9fa; /* Un tono muy suave */
+}
+
+/* 3. Estiliza el formulario para que sea orgánico */
+.form-section {
+    background: white;
+    padding: 3rem !important;
+}
+
+/* 4. Estiliza la imagen para que se integre */
+.store-image-section {
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 40px 40px 0; /* Solo redondea la parte derecha */
+}
+
+/* Clase personalizada para quitar el look de "cubo" */
+.login-card {
+    background-color: white;
+    border-radius: 40px !important; /* Bordes suaves */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important; /* Sombra suave */
+    overflow: hidden; /* Esto hace que la imagen no se salga de los bordes redondeados */
+    display: flex;
+    flex-direction: row;
+}
+
+/* Ajuste específico para que la imagen se vea fluida */
+.store-image-section {
+    background-size: cover;
+    background-position: center;
+    /* Quitamos cualquier borde extra */
+    border: none !important;
+}
+
+/* 5. Inputs sin bordes duros */
+.auth-input {
+    border: none !important;
+    background-color: #f1f3f5 !important;
+    border-radius: 50px !important; /* Bien redondeados */
+    padding: 1rem 1.5rem !important;
+}
+
+/* --- VISTA 2: PANEL DE INVENTARIO --- */
+.dashboard-pyp { background-color: var(--pyp-gray-bg); min-height: 100vh; }
+
+.navbar-pyp { background-color: var(--pyp-dark) !important; padding: 1rem 0; }
+
+.navbar-title { color: #FFFFFF !important; font-size: 1.2rem; }
+
+.btn-pyp-action {
+  background-color: #fff;
+  color: var(--pyp-dark);
+  border: 1px solid var(--pyp-border);
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.2s;
+}
+
+.table-pyp thead th { color: var(--pyp-light-gray); text-transform: uppercase; font-size: 0.8rem; }
+
+.badge-id { background-color: #F0F2F5; padding: 0.3rem 0.6rem; border-radius: 5px; font-weight: 500; }
+
+.badge-categoria { background: #fff; border: 1px solid var(--pyp-border); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; }
+
+.stock-badge { padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; }
+.stock-ok { background-color: rgba(25, 135, 84, 0.1); color: var(--pyp-success); }
+.stock-low { background-color: rgba(220, 53, 69, 0.1); color: var(--pyp-danger); }
+
+.form-input-pyp { border-radius: 10px; padding: 0.6rem 1rem; border: 1px solid var(--pyp-border); }
+
+/* Estilo para los cards de categorías */
+.bg-white {
+    transition: transform 0.2s;
+}
+.bg-white:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Ajuste del banner */
+.rounded-4 {
+    border-radius: 20px !important;
+}
+
+.container, .container-fluid {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
