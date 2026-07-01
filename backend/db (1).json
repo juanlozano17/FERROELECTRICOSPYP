@@ -1,0 +1,115 @@
+{
+  "productos": [
+    {
+      "nombre": "Cinta Led 12V-48W de 5 Metros x 5mm",
+      "categoria": "Cintas LED",
+      "precio": 78500,
+      "stock": 22,
+      "id": "A7x2jL"
+    },
+    {
+      "nombre": "Martillo Con Mango De Madera",
+      "categoria": "Herramientas",
+      "precio": 37000,
+      "stock": 15,
+      "id": "x7R29aB1m"
+    },
+    {
+      "nombre": "Destornillador Estrella 2.3",
+      "categoria": "Herramientas",
+      "precio": 10000,
+      "stock": 24,
+      "id": "kL94vPq0z"
+    },
+    {
+      "nombre": "Bombillo LED 12W",
+      "categoria": "Eléctricos",
+      "precio": 11000,
+      "stock": 60,
+      "id": "mJ61tXw8y"
+    },
+    {
+      "nombre": "Toma Corriente Doble de Incrustar",
+      "categoria": "Eléctricos",
+      "precio": 7500,
+      "stock": 30,
+      "id": "bN33hRs5q"
+    },
+    {
+      "nombre": "Lámpara Colgante Vidrio Redonda Negra E27",
+      "categoria": "Lámpara Colgante",
+      "precio": 142000,
+      "stock": 15,
+      "id": "vC88kLm2p"
+    },
+    {
+      "nombre": "Cinta Metrica Estandar - De 3 mts",
+      "categoria": "Herramientas",
+      "precio": 12000,
+      "stock": 30,
+      "id": "zW15tYr9x"
+    },
+    {
+      "nombre": "Bisturi De 13 Puntas De Cuerpo Metalico",
+      "categoria": "Herramientas",
+      "precio": 7400,
+      "stock": 50,
+      "id": "pQ42vNj7b"
+    },
+    {
+      "nombre": "Lámpara Colgante Troya Negra",
+      "categoria": "Lámpara Colgante",
+      "precio": 14200,
+      "stock": 6,
+      "id": "hS77xLp4w"
+    },
+    {
+      "nombre": "Espatula Mango Plas 3 Pul Ancho",
+      "categoria": "Herramientas",
+      "precio": 10800,
+      "stock": 32,
+      "id": "rT29mKq1v"
+    },
+    {
+      "nombre": "TUVO PVC",
+      "categoria": "Plomeria",
+      "precio": 15000,
+      "stock": 25,
+      "id": "1nG55jXh3t"
+    },
+    {
+      "nombre": "Teflon 30 metros",
+      "categoria": "Herramientas",
+      "precio": 7500,
+      "stock": 32,
+      "id": "fD12vBw6k"
+    },
+    {
+      "nombre": "Destornillador de pala",
+      "categoria": "Herramientas",
+      "precio": 12000,
+      "stock": 26,
+      "id": "yM38tPs0r"
+    }
+  ],
+  "usuarios": [
+    {
+      "nombre": "Santiago",
+      "apellidos": "Cardeans",
+      "user": "santiagocardenas@pyp.com",
+      "ciudad": "",
+      "pass": "MTIzNDU2Nzg=",
+      "telefono": "",
+      "rol": "admin",
+      "id": "78HRPBc1fWk"
+    },
+    {
+      "id": "ys0VSbWH648"
+    },
+    {
+      "id": "t6tLRrvYMXE"
+    }
+  ],
+  "ventas": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
