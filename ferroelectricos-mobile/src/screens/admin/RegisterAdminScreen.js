@@ -60,6 +60,7 @@ export default function RegisterAdminScreen({ navigation }) {
             correo: email,
             contrasena: hashedPassword,
             id_rol: 1,
+            activo: 'true',
           },
         ])
         .select();
@@ -69,7 +70,7 @@ export default function RegisterAdminScreen({ navigation }) {
       // Alerta limpia sin llamadas a navigation para evitar la falla GO_BACK
       Alert.alert(
         '¡Éxito!',
-        'Cuenta de Administrador creada correctamente.'
+        'Cuenta de Administrador de SUMILED S.A.S. creada correctamente.'
       );
     } catch (error) {
       console.log('Error completo:', error);
@@ -87,8 +88,8 @@ export default function RegisterAdminScreen({ navigation }) {
       <View style={styles.card}>
         <View style={styles.header}>
           <Ionicons name="shield-checkmark" size={32} color="#F59E0B" />
-          <Text style={styles.brand}>FERROELÉCTRICOS</Text>
-          <Text style={styles.subBrand}>PYP • Registro Administrativo</Text>
+          <Text style={styles.brand}>SUMILED S.A.S.</Text>
+          <Text style={styles.subBrand}>Registro Administrativo</Text>
         </View>
 
         <View style={styles.inputContainer}>

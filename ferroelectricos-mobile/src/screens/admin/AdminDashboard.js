@@ -24,7 +24,7 @@ export default function AdminDashboard({ navigation }) {
         <View style={styles.header}>
           <View>
             <Text style={styles.welcomeText}>Panel de Administración</Text>
-            <Text style={styles.subTitle}>FERROELÉCTRICOS PyP</Text>
+            <Text style={styles.subTitle}>SUMILED S.A.S.</Text>
           </View>
           <TouchableOpacity style={styles.btnLogout} onPress={logout}>
             <Ionicons name="log-out-outline" size={20} color="#EF4444" />
@@ -60,7 +60,7 @@ export default function AdminDashboard({ navigation }) {
             <Text style={styles.cardDesc}>Revisa los pedidos realizados</Text>
           </TouchableOpacity>
 
-          {/* Botón Envíos (NUEVO) */}
+          {/* Botón Envíos */}
           <TouchableOpacity
             style={styles.card}
             onPress={() => navigation.navigate('AdminEnvios')}
@@ -70,6 +70,18 @@ export default function AdminDashboard({ navigation }) {
             </View>
             <Text style={styles.cardTitle}>Envíos</Text>
             <Text style={styles.cardDesc}>Control y estado de despachos</Text>
+          </TouchableOpacity>
+
+          {/* Botón Usuarios */}
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => navigation.navigate('AdminUsuarios')}
+          >
+            <View style={[styles.iconBox, { backgroundColor: 'rgba(168, 85, 247, 0.1)' }]}>
+              <Ionicons name="people-outline" size={32} color="#A855F7" />
+            </View>
+            <Text style={styles.cardTitle}>Usuarios</Text>
+            <Text style={styles.cardDesc}>Gestión de clientes y administradores</Text>
           </TouchableOpacity>
 
         </View>

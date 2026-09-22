@@ -8,9 +8,9 @@ export default function CheckoutModal({ visible, carrito, total, onClose, onComp
   const { user } = useAuth();
 
   const [calle, setCalle] = useState('');
-  const [ciudad, setCiudad] = useState('Bogotá');
+  const [ciudad, setCiudad] = useState('Bogotá D.C.');
   const [telefono, setTelefono] = useState('');
-  const [medioPago, setMedioPago] = useState('NEQUI'); // Valor por defecto
+  const [medioPago, setMedioPago] = useState('NEQUI');
   const [cargando, setCargando] = useState(false);
 
   const procesarCompra = async () => {
@@ -22,13 +22,15 @@ export default function CheckoutModal({ visible, carrito, total, onClose, onComp
     setCargando(true);
 
     try {
-      // 1. Insertar la Venta en Supabase
+      // 1. Insertar la Venta con 'direccion_envio' y 'ciudad' directo en la tabla 'venta'
       const { data: ventaData, error: ventaError } = await supabase
         .from('venta')
         .insert([
           {
             total: total,
-            fecha: new Date().toISOString(),
+            fecha_pedido: new Date().toISOString().split('T')[0],
+            direccion_envio: calle,
+            ciudad: ciudad,
           },
         ])
         .select()
@@ -47,19 +49,6 @@ export default function CheckoutModal({ visible, carrito, total, onClose, onComp
 
       const { error: detalleError } = await supabase.from('detalle_venta').insert(detalles);
       if (detalleError) throw detalleError;
-
-      // 3. Insertar el Registro de Envío (con tus campos exactos)
-      const { error: envioError } = await supabase.from('registro_envio').insert([
-        {
-          idventa: idventa,
-          calle: calle,
-          ciudad: ciudad,
-          telefono: telefono,
-          estado_envio: 'Pendiente',
-        },
-      ]);
-
-      if (envioError) throw envioError;
 
       Alert.alert('¡Pedido Confirmado! 🎉', `Tu orden #${idventa} ha sido registrada con éxito.`, [
         {
@@ -89,13 +78,17 @@ export default function CheckoutModal({ visible, carrito, total, onClose, onComp
             </TouchableOpacity>
           </View>
 
-          <ScrollView showsVerticalScrollIndicator={false}>
+          <ScrollView 
+            showsVerticalScrollIndicator={false}
+            automaticallyAdjustKeyboardInsets={true}
+            keyboardShouldPersistTaps="handled"
+          >
             {/* Sección Dirección de Envío */}
             <Text style={styles.sectionTitle}>📍 Dirección de Entrega</Text>
 
             <TextInput
               style={styles.input}
-              placeholder="Dirección (Ej: Cra 15 # 90-20)"
+              placeholder="Dirección (Ej: Cl. 52 Sur #98B-70)"
               placeholderTextColor="#94A3B8"
               value={calle}
               onChangeText={setCalle}

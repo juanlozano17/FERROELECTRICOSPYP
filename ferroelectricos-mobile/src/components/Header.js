@@ -1,15 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Linking, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native'; // 1. Importas el hook
+import { useNavigation } from '@react-navigation/native';
 import { useAuth } from '../context/AuthContext';
 
 export default function Header({ busqueda, onBuscar, totalItems, onOpenCart }) {
   const { user, logout } = useAuth();
-  const navigation = useNavigation(); // 2. Obtienes navigation directamente
+  const navigation = useNavigation();
 
   const contactarAsesor = () => {
-    const url = 'whatsapp://send?text=Hola,%20tengo%20una%20consulta%20sobre%20el%20catálogo%20de%20FERROELÉCTRICOS%20PYP&phone=573000000000';
+    const url = 'whatsapp://send?text=Hola,%20tengo%20una%20consulta%20sobre%20el%20catálogo%20de%20SUMILED%20S.A.S.&phone=573000000000';
     Linking.openURL(url).catch(() => Alert.alert('Error', 'Asegúrate de tener WhatsApp instalado.'));
   };
 
@@ -24,7 +24,6 @@ export default function Header({ busqueda, onBuscar, totalItems, onOpenCart }) {
         ]
       );
     } else {
-      // 3. Navega sin fallo alguno
       navigation.navigate('LoginScreen');
     }
   };
@@ -42,7 +41,7 @@ export default function Header({ busqueda, onBuscar, totalItems, onOpenCart }) {
           </TouchableOpacity>
 
           <View>
-            <Text style={styles.brandTitle}>FERROELÉCTRICOS</Text>
+            <Text style={styles.brandTitle}>SUMILED S.A.S.</Text>
             <Text style={styles.brandSubtitle}>
               {user ? `Hola, ${user.nombre || user.user_metadata?.full_name || 'Cliente'}` : 'Invitado • Toca para ingresar'}
             </Text>
